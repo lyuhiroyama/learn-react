@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ProjectCard from './components/ProjectCard';
 
 function App() {
   return (
@@ -17,14 +18,14 @@ function App() {
         <section className="projects">
           <h2>Projects</h2>
           <div className="project-grid">
-            <div className="project-card">
-              <h3>UFV Course Outline Finder</h3>
-              <p>a Chrome extension</p>
-            </div>
-            <div className="project-card">
-              <h3>japanhostelreviews.com</h3>
-              <p>a hostel review site</p>
-            </div>
+            <ProjectCard
+              title="UFV Course Outline Finder"
+              description="a Chrome extension"
+            />
+            <ProjectCard
+              title="japanhostelreviews.com"
+              description="a hostel review site"
+            />
           </div>
         </section>
         <section className="contact">
