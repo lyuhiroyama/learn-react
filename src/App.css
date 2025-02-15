@@ -1,7 +1,14 @@
 .App {
   text-align: center;
   padding: 20px;
+  background-color: white;
 }
+
+.App.dark-mode {
+  background-color: #1a1a1a;
+  color: rgb(92, 66, 66);
+}
+
 
 header {
   background-color: #fa7fee;

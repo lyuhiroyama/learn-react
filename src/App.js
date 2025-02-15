@@ -1,13 +1,18 @@
-import React from 'react';
+import { useState } from 'react';
 import './App.css';
 import ProjectCard from './components/ProjectCard';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   return (
-    <div className="App">
+    <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
       <header className="App-header">
         <h1>Not-so Gumroad</h1>
         <h3>Not-so neo-brutalism</h3>
+        <button onClick={() => setIsDarkMode(!isDarkMode)}>
+          {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
       </header>
 
       <main>
