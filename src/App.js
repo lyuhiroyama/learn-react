@@ -1,9 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import ProjectCard from './components/ProjectCard';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [projects, setProjects] = useState([]); // initialize with Array to store gh projects with.
+
+  useEffect(() => {
+    fetch('https://api.github.com/users/lyuhiroyama/repos')
+      .then(response => response.json())
+      .then(data => setProjects(data))
+      .catch(error => alert("something went wrong: ", error))
+  }, []) // empty array second arg means 'only run once when page loads'
+
 
   return (
     <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
@@ -23,14 +32,15 @@ function App() {
         <section className="projects">
           <h2>Projects</h2>
           <div className="project-grid">
-            <ProjectCard
-              title="UFV Course Outline Finder"
-              description="a Chrome extension"
-            />
-            <ProjectCard
-              title="japanhostelreviews.com"
-              description="a hostel review site"
-            />
+            {projects.map(project => {
+              return (
+                <ProjectCard
+                  key={project.id} // React uses internally. Produces 'warning' without this.
+                  title={project.name}
+                  description={project.description}
+                />
+              )
+            })}
           </div>
         </section>
         <section className="contact">
