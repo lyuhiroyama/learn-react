@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import ProjectCard from './components/ProjectCard';
+import Navbar from './components/Navbar';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
+      <Navbar />
       <header className="App-header">
         <h1>Not-so Gumroad</h1>
         <h3>Not-so neo-brutalism</h3>

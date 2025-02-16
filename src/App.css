@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   padding: 20px;
@@ -8,6 +12,43 @@
   background-color: #1a1a1a;
   color: rgb(92, 66, 66);
 }
+
+.nav {
+  background-color: #9dfc7c;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.nav .site-title {
+  font-size: 2rem;
+}
+
+.nav ul {
+  padding: 0; /* rid default padding-left */
+  margin: 0; /* rid default margins top&bottom */
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+  height: 100%; 
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.nav li:hover {
+  background-color: #777;
+}
+
+
 
 
 header {
