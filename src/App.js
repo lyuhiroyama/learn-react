@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom'
 import './App.css';
 import ProjectCard from './components/ProjectCard';
 import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Hornets from './components/Hornets';
+import About from './components/About';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -17,7 +21,16 @@ function App() {
 
   return (
     <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
+      
       <Navbar />
+      <div className="routes">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/hornets" element={<Hornets />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+
       <header className="App-header">
         <h1>Not-so Gumroad</h1>
         <h3>Not-so neo-brutalism</h3>
