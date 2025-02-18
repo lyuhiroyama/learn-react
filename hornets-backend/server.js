@@ -1,3 +1,5 @@
+require('dotenv').config();  // Load env variables first
+
 // (1) Import packages
 const express = require('express'); // Framework used with js in node.js env to create API's/servers
 const mysql = require('mysql2'); // Client (set of code) used to talk to the db with
